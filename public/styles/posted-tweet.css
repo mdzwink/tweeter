@@ -20,14 +20,23 @@ article {
   background-color: inherit;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
+}
+.user-name {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.user-name img {
+  padding-right: 10px;
 }
 main p {
   background-color: inherit;
   width: auto;
   margin: 50px 0px 0px 0px ;
-  padding-bottom: 30px;
+  padding: 0 0 30px 15px;
 }
 main footer {
   color: #545149;

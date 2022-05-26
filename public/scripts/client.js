@@ -40,17 +40,15 @@ const data = [
 
 $(document).ready(function() {
   console.log('ready from client.js, tweet gen');
-
-  const $submit = $('tweet-button-div');
-
-  $submit.on('submit', function(){
-    console.log('submission attempted')
-
+  
+  const $submit = $('#tweet-article');
+  
+  $($submit).submit(function(event){
+    alert('getting there')
+    event.preventDefault();
+    // console.log('',)
+    // $.ajax('')
   })
-
-
-
-
 
   const renderTweets = function(tweets) {
     for (let aTweet of tweets) {

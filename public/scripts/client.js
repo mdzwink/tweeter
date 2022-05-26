@@ -5,54 +5,26 @@
  */
 
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1653356348716
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1653442748716
-  }
-]
+$(document).ready(function() {  
 
-// const timeStamp = function(created_at) {
-//   const currentTime = new Date(0);
-//   console.log(currentTime)
-//   const 
-//   const formattedTime = 
-// }
-
-
-$(document).ready(function() {
-  console.log('ready from client.js, tweet gen');
-  
   const $submit = $('#tweet-article');
   
-  $($submit).submit(function(event){
+  $($submit).submit(function(event){//<<<<<<<<<<<current work
     let data = $(this).serialize();
-    console.log('DATALENGTH:', data.length)
     event.preventDefault();
+    if (charCount === 140) {
+      alert("Form empty: please enter your message before submitting!")
+      return;
+    }
+    if (charCount < 0) {
+      alert("You have exceeded the maximum message size!")
+      return;
+    }
     $.post('/tweets/', data);
   })
   
   const renderTweets = function(tweets) {
     for (let aTweet of tweets) {
-      console.log('found a tweet');
       const $tweet = createTweetElement(aTweet);
       $('#tweets-container').append($tweet);
     }  

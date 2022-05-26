@@ -1,0 +1,55 @@
+main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+article {
+  display: flex;
+  width: 30em;
+  flex-direction: column;
+  box-shadow: 1px 1px 9px 1px #c9beb5;
+  padding: 23px;
+  margin-bottom: 14px;
+  border: 3px solid;
+}
+
+.container header {
+  height: auto;
+  width: auto;
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+main p {
+  background-color: inherit;
+  width: auto;
+  margin: 50px 0px 0px 0px ;
+  padding-bottom: 30px;
+}
+main footer {
+  color: #545149;
+  font-size: small;
+  display: flex;
+
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 3px solid #545149;
+}
+
+main footer .reactions {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+main footer .flag {
+  padding-right: 5px;
+}
+
+main footer .retweet {
+  padding-right: 5px;
+}
+

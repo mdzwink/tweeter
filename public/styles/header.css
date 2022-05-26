@@ -1,0 +1,18 @@
+header {
+  height: 510px;
+  width: auto;
+  background-color: #f7bc51;
+  background-image: url('background-imgs/concrete-wall-2.png');
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profile-card .profileName {
+  margin-top: 0.1em;
+}
+
+.profile-card {
+  color:  #de5d83;
+}

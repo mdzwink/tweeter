@@ -1,0 +1,30 @@
+
+nav {
+  display: flex;
+  height: 120px;
+  width: auto;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  justify-content: space-between;
+  align-content: center;
+  position: fixed;
+  top: auto;
+  width:100%;
+}
+.nav-logo {
+  display: flex;
+  font-family: 'Bungee', cursive, sans-serif;
+  justify-content: center;
+  margin: 1.5em;
+}
+
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 1.5em;
+}
+
+nav i {
+  color: red;
+}

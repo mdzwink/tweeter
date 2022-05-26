@@ -1,0 +1,43 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+
+.new-tweet {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  width: 30em;
+  flex-direction: column;
+  box-shadow: 1px 1px 9px 1px #c9beb5;
+  padding: 23px;
+  margin-bottom: 14px;
+}
+
+textarea {
+  background-color: inherit;
+  width: auto;
+  border-bottom: 3px solid #545149;
+}
+
+.tweet-button-div {
+  color: #545149;
+  font-family: 'Bungee';
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+p {
+  margin-left: 10%;
+}
+
+.tweet-button {
+  color: #ffffff;
+  background-color: #4056a1;
+}

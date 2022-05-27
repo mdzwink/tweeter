@@ -22,7 +22,10 @@ form {
 textarea {
   background-color: inherit;
   width: auto;
+  border: none;
   border-bottom: 3px solid #545149;
+  resize: none;
+  outline: none;
 }
 
 .tweet-button-div {

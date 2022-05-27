@@ -4,17 +4,14 @@ const countChar = function(event) {
   let key = event.data;
   let inputVal = $(this).val();
   charCount = 140-inputVal.length;//<<<<<<<<< char count;
-  let $tweetCounter = document.querySelector('output.counter');;
-  $tweetCounter.innerHTML = charCount;;
-  console.log(charCount);
-  console.log();
+  let $tweetCounter = document.querySelector('output.counter');
+  $tweetCounter.innerHTML = charCount;
   if (charCount >= 0) {
     $tweetCounter.style.color = '#545149';
   }
   if (charCount < 0) {
     $tweetCounter.style.color = 'red';
   }
-  return charCount;
 };
 
 $(document).ready(function() {

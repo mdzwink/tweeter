@@ -8,21 +8,22 @@
 
 
 $(document).ready(function() {
+
+  const $submit = $('#tweet-article');
   
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
-
-  const $submit = $('#tweet-article');
+  
+  
   $($submit).submit(function(event) {
     $('#error1').hide('fast');
     $('#error2').hide('fast');
+    event.preventDefault();
     let data = $(this).serializeArray()[0].value;
     let userInput = escape(data);
-    event.preventDefault();
     if (charCount === 140) {
       $('#error1').show('slow');
       setTimeout(() => {
@@ -30,8 +31,6 @@ $(document).ready(function() {
       }, 3000);
       return;
     }
-
-
     if (charCount < 0) {
       $('#error2').show('slow');
       setTimeout(() => {
@@ -39,13 +38,15 @@ $(document).ready(function() {
       }, 3000);
       return;
     }
-
-
     loadtweets(function(obj) {
       obj[0].content.text = userInput;
       let tweet = [obj[0]];
       renderTweets(tweet);
     });
+    let textarea = document.getElementById("tweet-text");
+    textarea.value = "";
+    let charCounter = document.getElementById("counter");
+    charCounter.value = "140";
   });
 
   //gets mock tweets from tweet generator and passes the formed objects to cb fn

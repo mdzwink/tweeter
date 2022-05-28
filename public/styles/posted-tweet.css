@@ -4,14 +4,21 @@ main {
   flex-direction: column;
 }
 
-article {
-  display: flex;
-  width: 30em;
-  flex-direction: column;
-  box-shadow: 1px 1px 9px 1px #c9beb5;
-  padding: 23px;
-  margin-bottom: 14px;
-  border: 3px solid;
+.tweets-container {
+  width: 100%;
+}
+article:hover {
+  box-shadow: 3px 4px 2px #c9beb5;
+}
+
+article.posted-tweet {
+    display: flex;
+    width: 100%;
+    min-width: 50vw;
+    flex-direction: column;
+    padding: 1em;
+    margin-bottom: 0.5em;
+    border: 3px solid;
 }
 
 .container header {
@@ -30,13 +37,14 @@ article {
 }
 
 .user-name img {
-  padding-right: 10px;
+  padding-right: 1em;
 }
 main p {
   background-color: inherit;
   width: auto;
-  margin: 50px 0px 0px 0px ;
-  padding: 0 0 30px 15px;
+  margin: 1em 0 0 0;
+  padding: 0 0.5em 1em 0.5em;
+  word-wrap: break-word;
 }
 main footer {
   color: #545149;
@@ -44,21 +52,25 @@ main footer {
   display: flex;
 
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 0.4em;
   border-top: 3px solid #545149;
 }
 
-main footer .reactions {
+.reactions {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  gap: 0.5em;
 }
 
-main footer .flag {
-  padding-right: 5px;
+.flag:hover {
+  color: #f7bc51;
 }
 
-main footer .retweet {
-  padding-right: 5px;
+.retweet:hover {
+  color: #1ad;
 }
 
+.like:hover {
+  color: #dd2222;
+}

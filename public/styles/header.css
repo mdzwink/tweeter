@@ -2,7 +2,6 @@ header {
   height: 510px;
   width: auto;
   background-color: #f7bc51;
-  background-image: url('background-imgs/concrete-wall-2.png');
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

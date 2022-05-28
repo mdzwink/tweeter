@@ -13,12 +13,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
     
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/posted-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <!-- <link rel="stylesheet" href="/styles/test.css" type="text/css" /> -->
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -30,7 +32,7 @@
     <script type="text/javascript" src="/scripts/posted-tweet.js"></script>
   </head>
 
-  <body>
+  <body class="body">
     <!-- Top nav bar (fixed) -->
     <nav>
       <div class="nav-logo">
@@ -38,11 +40,11 @@
       </div>
       <div class="nav-right">
         <span><strong>Write</strong> a new tweet</span>
-        <i class="fas fa-angle-double-down"></i>
+        <div id="double-down-arrows"><i class="fas fa-angle-double-down"></i></div>
       </div>
     </nav>
 
-    <header>
+    <header class="main-header">
       <div class="profile-card">
         <img src="/images/profile-hex.png">
       </div>
@@ -52,35 +54,23 @@
       </div>
     </header>
 
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form id="tweet-article" method="POST" action="/tweets/" enctype="application/x-www-form-urlencoded" >
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea id="tweet-text" name="text" ></textarea>
-        <div class="tweet-button-div">
-          <button id="tweet-button" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-
+    
     <!-- Page-specific (main) content here -->
-    <main id="tweets-container" class="container">
-      <article>
-        <header>
-          <div>Avatar & Name</div>
-          <div>@username</div>
-        </header>
-        <p>This is a tweet about tweeting... tweet it as a collage course!</p>
-        <footer>
-          <div>10 days ago</div>
-          <div class="reactions">
-            <div class="flag"><i class="fas fa-flag"></i></div>
-            <div class="retweet" ><i class="fa fa-retweet" aria-hidden="true"></i></div>
-            <div class="like"><i class="fa-solid fa-heart"></i></div>
+    <main class="container">
+      <section class="new-tweet">
+        <form id="tweet-article" method="POST" action="/tweets/" enctype="application/x-www-form-urlencoded" >
+          <textarea id="tweet-text" name="text" placeholder="What are you humming about?"></textarea>
+          <div class="tweet-button-div">
+            <button id="tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
-        </footer>
-      </article>
+          <p id="error1">Please enter your message before submitting!</p>
+          <p id="error2">You have exceeded the maximum message size!</p>
+        </form>
+      </section>
+      <section id="tweets-container">
+        <!-- tweets appear here -->
+      </section>
     </main>
   </body>
 </html>

@@ -8,13 +8,17 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+}
+
+.tweet-container {
+  width: 100%;
 }
 
 form {
   display: flex;
-  width: 30em;
+  width: 100%;
   flex-direction: column;
-  box-shadow: 1px 1px 9px 1px #c9beb5;
   padding: 23px;
   margin-bottom: 14px;
 }
@@ -28,6 +32,9 @@ textarea {
   outline: none;
 }
 
+#tweet-text {
+  padding-top: 11px;
+}
 .tweet-button-div {
   color: #545149;
   font-family: 'Bungee';
@@ -43,4 +50,18 @@ p {
 #tweet-button {
   color: #ffffff;
   background-color: #4056a1;
+}
+
+#tweet-button:hover {
+  background-color: #526bbc;
+  box-shadow: 3px 3px 3px #c9beb5;
+}
+
+p#error1 {
+  display: none;
+  color: #e69e29;
+}
+p#error2{
+  display: none;
+  color: #e69e29;
 }

@@ -2,7 +2,7 @@ let charCount = 140;
 
 const countChar = function(event) {
   let inputVal = $(this).val();
-  charCount = 140 - inputVal.length;//<<<<<<<<< char count;
+  charCount = 140 - inputVal.length;
   let $tweetCounter = document.querySelector('output#counter');
   $tweetCounter.innerHTML = charCount;
   if (charCount >= 0) {

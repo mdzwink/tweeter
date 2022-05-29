@@ -9,21 +9,32 @@
 
 $(document).ready(function() {
 
+
   const $submit = $('#tweet-article');
-  
+  const $composeTweet = $(".nav-right")
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
-  
+  $($composeTweet).click(function() {
+    $('.new-tweet').show('slow');
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  })
+
+  $($composeTweet).click(function() {
+    $('.new-tweet').show('slow');
+  })
+
   $($submit).submit(function(event) {
-    $('#error1').hide('fast');
-    $('#error2').hide('fast');
     event.preventDefault();
     let data = $(this).serializeArray()[0].value;
     let userInput = escape(data);
+    console.log('CHARCOUNT', charCount)
     if (charCount === 140) {
       $('#error1').show('slow');
       setTimeout(() => {
@@ -46,10 +57,11 @@ $(document).ready(function() {
     let textarea = document.getElementById("tweet-text");
     textarea.value = "";
     let charCounter = document.getElementById("counter");
-    charCounter.value = "140";
+    charCounter.value = 140;
+    charCount = 140;
   });
 
-  //gets mock tweets from tweet generator and passes the formed objects to cb fn
+  //gets mock tweets from tweet generator and passes the array of objects to cb function
   const loadtweets = function(cb) {
     $.getJSON('http://localhost:8080/tweets', function(jsontweets) {
       cb(jsontweets);
@@ -59,7 +71,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (let aTweet of tweets) {
       const $tweet = createTweetElement(aTweet);
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     }
   };
   loadtweets(renderTweets);
@@ -91,6 +103,4 @@ $(document).ready(function() {
     
     return tweetCompiler;
   };
- 
-  
 });

@@ -4,8 +4,10 @@ main {
   flex-direction: column;
 }
 
-.tweets-container {
+#tweets-container {
   width: 100%;
+  word-break: break-word;
+  flex-direction: column;
 }
 article:hover {
   box-shadow: 3px 4px 2px #c9beb5;
@@ -17,6 +19,7 @@ article.posted-tweet {
     min-width: 50vw;
     flex-direction: column;
     padding: 1em;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
     border: 3px solid;
 }

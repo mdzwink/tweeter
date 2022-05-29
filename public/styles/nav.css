@@ -11,6 +11,7 @@ nav {
   top: auto;
   width:100%;
 }
+
 .nav-logo {
   display: flex;
   font-family: 'Bungee', cursive, sans-serif;
@@ -24,6 +25,9 @@ nav {
   flex-direction: column;
   text-align: center;
   margin: 1.5em;
+}
+.nav-right:hover {
+  color: #afb7d1;
 }
 
 nav i {

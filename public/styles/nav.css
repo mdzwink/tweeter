@@ -4,7 +4,7 @@ nav {
   height: 120px;
   width: auto;
   background-color: #f7bc51;
-  color: #FFFFFF;
+  color: #ffffff;
   justify-content: space-between;
   align-content: center;
   position: fixed;
@@ -21,13 +21,14 @@ nav {
 }
 
 .nav-right {
+  color: #dde1ef;
   display: flex;
   flex-direction: column;
   text-align: center;
   margin: 1.5em;
 }
 .nav-right:hover {
-  color: #afb7d1;
+  color: #ffffff;
 }
 
 nav i {

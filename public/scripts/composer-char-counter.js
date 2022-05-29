@@ -14,7 +14,6 @@ const countChar = function(event) {
 };
 
 $(document).ready(function() {
-  console.log("Document Ready");
   const $tweetInput = document.querySelector('textarea');
   $tweetInput.addEventListener("input", countChar);
 });

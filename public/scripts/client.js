@@ -34,7 +34,6 @@ $(document).ready(function() {
     event.preventDefault();
     let data = $(this).serializeArray()[0].value;
     let userInput = escape(data);
-    console.log('CHARCOUNT', charCount)
     if (charCount === 140) {
       $('#error1').show('slow');
       setTimeout(() => {

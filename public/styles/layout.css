@@ -60,6 +60,10 @@ main.container {
   nav {
     background-color: #4056A1;
   }
+  .nav-right {
+    color: #efeedd;
+  }
+
   header.main-header {
     height: 450px;
     min-width: 30vw;
@@ -71,5 +75,8 @@ main.container {
   main.container {
     width: auto;
     margin-top: 7em;
+  }
+  .new-tweet {
+    display: none;
   }
 }

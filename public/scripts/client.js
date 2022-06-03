@@ -12,11 +12,13 @@ $(document).ready(function() {
 
   const $submit = $('#tweet-article');
   const $composeTweet = $(".nav-right")
+  //escape user input to avoid sql injection attacks
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+  //on click of compose button, reveil new tweet form and bring user back to top of page
   $($composeTweet).click(function() {
     $('.new-tweet').show('slow');
     window.scrollTo({
@@ -26,13 +28,10 @@ $(document).ready(function() {
     });
   })
 
-  $($composeTweet).click(function() {
-    $('.new-tweet').show('slow');
-  })
-
+  // action on submitting new tweet
   $($submit).submit(function(event) {
     event.preventDefault();
-    let data = $(this).serializeArray()[0].value;
+    let data = $(this).serialize()
     let userInput = escape(data);
     if (charCount === 140) {
       $('#error1').show('slow');
@@ -48,11 +47,10 @@ $(document).ready(function() {
       }, 3000);
       return;
     }
-    loadtweets(function(obj) {
-      obj[0].content.text = userInput;
-      let tweet = [obj[0]];
-      renderTweets(tweet);
-    });
+    $.post('/tweets/', userInput, () => {
+      loadtweets(renderTweets);
+    })
+    // clearing text field, reseting new tweet char counter
     let textarea = document.getElementById("tweet-text");
     textarea.value = "";
     let charCounter = document.getElementById("counter");
@@ -64,6 +62,7 @@ $(document).ready(function() {
   const loadtweets = function(cb) {
     $.getJSON('http://localhost:8080/tweets', function(jsontweets) {
       cb(jsontweets);
+      console.log('TWEETS', jsontweets)
     });
   };
   //loops through tweet array of objects. sends each through createTweetElement then appends resulting 'tweet' asynchronously to 'main' element

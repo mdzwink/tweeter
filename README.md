@@ -5,11 +5,12 @@ Tweeter is a simple, single-page Twitter clone.
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 ## Final Product
+!["Showing desktop styling."](docs/tweeter-desktop-format.png)
 
-!["This screenshot shows the registration page of TinyApp."](./example_imgs/TinyApp_examples1.png)
-!["This screenshot shows the home page for logged in users where all owned shortURLs are displayed."](./example_imgs/TinyApp_examples2.png)
-!["This screenshot shows the edit page where users can update the long URL associated with one of their shortURLs."](./example_imgs/TinyApp_examples3.png)
-!["This screenshot shows the create TinyURL page where you can have a new shortURL generated for a given long URL."](./example_imgs/TinyApp_examples4.png)
+!["Showing the new tweet form."](docs/tweeter-desktop-format-new-tweet.png)
+
+!["Showing styling for small screens."](docs/tweeter-small-format.png)
+
 
 ## Getting Started
 
